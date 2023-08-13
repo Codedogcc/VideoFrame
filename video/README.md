@@ -1,4 +1,4 @@
-# videoframe
+# video
 
 ## Project setup
 ```
