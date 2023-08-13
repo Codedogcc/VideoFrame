@@ -35,6 +35,7 @@ export default {
 
   data() {
     return {
+      // 播放的一些配置。可以抽离到父组件去定义
       playerOptions: {
         playbackRates: [0.5, 1.0, 1.5, 2.0], //播放速度
 
@@ -82,14 +83,12 @@ export default {
       },
 
       //一开始视频观看时长，可用于记录视频播放的时间，下一次直接从这个时间开始播放
-
       gklog: ''
     };
   },
 
   methods: {
     //视频快进
-
     goFast() {
       this.gklog += 5;
 
@@ -99,7 +98,6 @@ export default {
     },
 
     //视频后退
-
     goBack() {
       this.gklog -= 5;
 
@@ -107,9 +105,7 @@ export default {
 
       this.$refs.videoPlayer.player.currentTime(this.gklog);
     },
-
-    /* 设置视频进度 */
-
+    // 设置视频进度
     playerReadied(player) {
       player.currentTime(this.gklog);
 
