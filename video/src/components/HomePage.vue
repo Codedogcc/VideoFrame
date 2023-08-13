@@ -1,6 +1,6 @@
 <template>
   <div class="windowvideo">
-    <VideoWindow :url="url" :videourl="videourl" />
+    <VideoWindow :imgurl="imgurl" :videourl="videourl" />
   </div>
 </template>
 
@@ -13,7 +13,8 @@ export default {
   },
   data() {
     return {
-      url: 'https://tse2-mm.cn.bing.net/th/id/OIP-C.Ibx5SSeZTLfll68KuL7dpQAAAA?pid=ImgDet&rs=1', // 封面链接
+      imgurl:
+        'https://tse2-mm.cn.bing.net/th/id/OIP-C.Ibx5SSeZTLfll68KuL7dpQAAAA?pid=ImgDet&rs=1', // 封面链接
       videourl: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4' //视频链接
     };
   }
@@ -21,6 +22,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+// 配置视频窗口大小及
 .windowvideo {
   width: 500px;
   height: 500px;

@@ -31,7 +31,7 @@
 export default {
   name: 'VideoWindow',
 
-  props: ['url', 'videourl'],
+  props: ['imgurl', 'videourl'],
 
   data() {
     return {
@@ -44,7 +44,7 @@ export default {
 
         muted: false, // 默认情况下将会消除任何音频。
 
-        loop: false, // 导致视频一结束就重新开始。
+        loop: false, // 视频一结束是否就重新开始。
 
         preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
 
@@ -56,7 +56,7 @@ export default {
 
         sources: [
           {
-            type: 'video/mp4', //这里的种类支持很多种：基本视频格式、直播、流媒体等，具体可以参看git网址项目
+            type: 'video/mp4', //这里的种类支持很多种：基本视频格式、直播、流媒体等
 
             // src: require('C:/Users/codecc/Desktop/food.mp4') //本地视频使用方式，本地图片引入亦如此
 
@@ -64,7 +64,7 @@ export default {
           }
         ],
 
-        poster: this.url, //父组件传的封面地址
+        poster: this.imgurl, //父组件传的封面地址
 
         width: document.documentElement.clientWidth, //播放器宽度
 
