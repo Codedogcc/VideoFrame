@@ -29,9 +29,9 @@
 
 <script>
 export default {
-  name: 'HomePage',
+  name: 'VideoWindow',
 
-  props: ['url'],
+  props: ['url', 'videourl'],
 
   data() {
     return {
@@ -60,11 +60,11 @@ export default {
 
             // src: require('C:/Users/codecc/Desktop/food.mp4') //本地视频使用方式，本地图片引入亦如此
 
-            src: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4' //视频地址
+            src: this.videourl //父组件传的视频地址
           }
         ],
 
-        poster: this.url, //你的封面地址
+        poster: this.url, //父组件传的封面地址
 
         width: document.documentElement.clientWidth, //播放器宽度
 
@@ -127,7 +127,7 @@ export default {
     gklog: function () {}
   },
   mounted() {
-    console.log(this, 'thisurl');
+    console.log(this.url, 'thisurl', this.videourl, 'thisvideourl');
   }
 };
 </script>
