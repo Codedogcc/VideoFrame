@@ -29,6 +29,50 @@
 
 <script>
 export default {
+  // 使用说明
+  //#region
+  /* 
+    // 视频格式
+    type："video/webm"   // 可以播放，用ogg也可打开
+    type："video/ogg"    // 可以播放，用webm也可打开
+    type："video/3gp"    // 可以播放
+    type："video/mp4"    // 可以播放
+    type："video/avi"    // 打不开 无法播放
+    type："video/flv"    // 打不开 可以使用flvjs代替
+    type："video/mkv"    // 打不开 使用video/mp4可以播放
+    type："video/mov"    // 打不开 使用video/mp4可以播放
+    type："video/mpg"    // 打不开 未测试
+    type："video/swf"    // 打不开  未测试
+    type："video/ts"     // 打不开 未测试
+    type："video/wmv"    // 打不开 未测试
+    type："video/vob"    // 没转化 未测试
+    type："video/mxf"    // 转化出错 未测试
+    type: "video/rm"     // 转化出错 未测试
+    // 组件方法
+    重置进度条
+    this.player.src(src)
+    加载视频
+    this.player.load();
+    播放视频
+    this.player.play();
+    暂停播放
+    this.player.pause();
+    直接全屏 如果当前设备支持的话
+    this.player.requestFullscreen();
+    在全屏模式下，将视频恢复到正常大小
+    this.player.exitFullscreen();
+    当环境不支持全屏时 则扩展铺满容器
+    this.player.enterFullWindow();
+    重置播放器
+    this.player.reset();
+    返回当前播放源信息
+    this.player.currentSources();
+    获取或者设置预加载属性
+    this.player.preload(val);
+    播放控件是否显示
+    this.player.controls(false);
+    父组件可以通过获取当前组件的 player 来调用 videoPlayer 组件的方法 */
+  // #endregion
   name: 'VideoWindow',
 
   props: ['imgurl', 'videourl'],
@@ -72,11 +116,11 @@ export default {
         notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
 
         controlBar: {
-          timeDivider: true,
+          timeDivider: true, // 分时器（进度条）
 
           durationDisplay: true,
 
-          remainingTimeDisplay: false,
+          remainingTimeDisplay: false, // 剩余时间
 
           fullscreenToggle: true //全屏按钮
         }
